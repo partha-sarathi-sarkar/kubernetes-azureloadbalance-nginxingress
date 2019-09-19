@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angularcrud
+  namespace: deployment-angularcrud
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: angularcrud
+  template:
+    metadata:
+      labels:
+        app: angularcrud
+    spec:
+      containers:
+      - name: angularcrud
+        image: spartha1995/angular-crud:latest
+        ports:
+        - containerPort: 80

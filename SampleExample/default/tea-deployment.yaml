@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: default 
+  template:
+    metadata:
+      labels:
+        app: default 
+    spec:
+      containers:
+      - name: default 
+        image: spartha1995/defaultpage:latest
+        ports:
+        - containerPort: 80
